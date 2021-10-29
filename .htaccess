@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+
+[01-Sep-2020 18:48:35 UTC] PHP Fatal error:  Uncaught Error: Interface 'Interop\Container\ContainerInterface' not found in /storage/ssd5/582/14743582/vendor/slim/slim/Slim/Container.php:45
+Stack trace:
+#0 /storage/ssd5/582/14743582/vendor/composer/ClassLoader.php(444): include()
+#1 /storage/ssd5/582/14743582/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 /storage/ssd5/582/14743582/vendor/slim/slim/Slim/App.php(76): spl_autoload_call()
+#4 /storage/ssd5/582/14743582/public_html/index.php(8): Slim\App->__construct()
+#5 {main}
+  thrown in /storage/ssd5/582/14743582/vendor/slim/slim/Slim/Container.php on line 45
+
+php_flag log_errors on
+php_value error_log  	/storage/ssd5/582/14743582/public_html/domain/PHP_errors.log
+
+# HTID:1177512: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:1177512:
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
