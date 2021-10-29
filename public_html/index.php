@@ -9,4 +9,3 @@ $app = new \Slim\App;
 // ruta clientes 
 require '../src/rutas/clientes.php';
 $app->run();
-<?php echo '<p>Hola Mundo</p>'; ?>
