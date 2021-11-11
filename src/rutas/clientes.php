@@ -71,6 +71,7 @@ $resultado->bindParam(':telefono',$telefono);
 
 $resultado->execute();
 echo json_encode("REGISTRO GUARDADO");
+echo json_encode($nombreHash);
 
 $resultado = null;
 $db= null;
