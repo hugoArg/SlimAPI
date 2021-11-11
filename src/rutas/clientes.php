@@ -58,14 +58,14 @@ $app->post('/api/clientes/nuevo',function(Request $request,Response $respose){
 $nombreHash =  password_hash($nombre,PASSWORD_DEFAULT);
     
     
-    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombreHash,:apellido,:telefono)";
+    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombre,:apellido,:telefono)";
     try{
 
         $db = new db();
         $db = $db->conectDB();
         $resultado = $db->prepare($sql);
 
-$resultado->bindParam(':nombre',$nombre);
+$resultado->bindParam(':nombre',$nombreHash);
 $resultado->bindParam(':apellido',$apellido);
 $resultado->bindParam(':telefono',$telefono);
 
