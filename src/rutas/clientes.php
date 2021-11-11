@@ -58,7 +58,7 @@ $app->post('/api/clientes/nuevo',function(Request $request,Response $respose){
 $nombreHash =  password_hash($nombre,PASSWORD_DEFAULT);
     
     
-    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombre,:apellido,:telefono)";
+    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombreHash,:apellido,:telefono)";
     try{
 
         $db = new db();
@@ -71,7 +71,7 @@ $resultado->bindParam(':telefono',$telefono);
 
 $resultado->execute();
 echo json_encode("REGISTRO GUARDADO");
-echo json_encode($nombreHash);
+#echo json_encode($nombreHash);
 
 $resultado = null;
 $db= null;
