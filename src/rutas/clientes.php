@@ -58,7 +58,7 @@ $app->post('/api/clientes/nuevo',function(Request $request,Response $respose){
 $nombreHash =  password_hash($nombre,PASSWORD_DEFAULT);
     
     
-    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombreHash,:apellido,:telefono)";
+    $sql = "INSERT INTO clientes (nombre,apellido,telefono)VAlUES(:nombre,:apellido,:telefono)";
     try{
 
         $db = new db();
